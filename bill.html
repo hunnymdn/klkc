@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+function multiplyBy()
+{
+		var bagNumber = [];
+		var rateNumber = [];
+		var sum = [];
+		var net = 0;
+		var zincAmount;
+		var tax1;
+		var tax2;
+		var totalTAX;
+		var netAmount;
+		//var rateNumber = [];
+        bagNumber.push(document.getElementById("numUREA").value);
+		rateNumber.push(document.getElementById("rateUREA").value);
+		bagNumber.push(document.getElementById("numDAP").value);
+		rateNumber.push(document.getElementById("rateDAP").value);
+		bagNumber.push(document.getElementById("numMOP").value);
+		rateNumber.push(document.getElementById("rateMOP").value);
+		bagNumber.push(document.getElementById("numSUPER").value);
+		rateNumber.push(document.getElementById("rateSUPER").value);
+		bagNumber.push(document.getElementById("numZINC").value);
+		rateNumber.push(document.getElementById("rateZINC").value);
+		bagNumber.push(document.getElementById("numSULPHAR").value);
+		rateNumber.push(document.getElementById("rateSULPHAR").value);
+		for (i = 0; i < 6; i++) {
+        sum[i]= bagNumber[i]*rateNumber[i];
+		net = net + sum[i];
+		}
+		zincAmount=sum[4];
+		document.getElementById("amountUREA").value= sum[0];
+		document.getElementById("amountDAP").value= sum[1];
+		document.getElementById("amountMOP").value= sum[2];
+		document.getElementById("amountSUPER").value= sum[3];
+		document.getElementById("amountZINC").value= sum[4];
+		document.getElementById("amountSULPHAR").value= sum[5];
+		document.getElementById("amount").innerHTML= net;
+		tax1 = net-zincAmount;
+		tax1=round(tax1*0.025);
+		document.getElementById("cgst1").innerHTML= tax1;
+		document.getElementById("sgst1").innerHTML= tax1;
+		tax2 = round(zincAmount*0.06);
+		document.getElementById("cgst2").innerHTML= tax2;
+		document.getElementById("sgst2").innerHTML= tax2;
+		totalTAX=tax1+tax2;
+		document.getElementById("totalCGST").innerHTML= totalTAX;
+		document.getElementById("totalSGST").innerHTML= totalTAX;
+		netAmount = round(net+ totalTAX+totalTAX);
+		document.getElementById("net").innerHTML= netAmount;
+
+		
+
+
+}
+function round(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+</script>
+<meta charset=utf-8 />
+<title>SALE BILL</title>
+<style type="text/css">
+body {margin: 15px;}
+</style> 
+</head>
+<body style="background-color:powderblue;">
+<p style="text-align:center;">K.L.K.C </p>
+<p style="text-align:center;">Bill Calculator</p>
+<hr>
+</hr>
+<table style="border-collapse: collapse; width: 25%;" border="2">
+<tbody>
+<tr style="height: 25px;">
+<td style="height: 17px;">UREA</td>
+<td style="height: 17px;"><input id="numUREA" type="number"  min="0" value="0" autofocus="" style="width: 7em"/>&nbsp;</td>
+<td style="height: 17px;"><input id="rateUREA" type="number" min="0" value="250" style="width: 7em"/>&nbsp;</td>
+<td style="height: 17px;"><input id="amountUREA" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+</tr>
+
+<tr style="height: 25px;">
+<td style="height: 17px;">DAP</td>
+<td style="height: 17px;"><input id="numDAP" type="number"  min="0" value="0" style="width: 7em" />&nbsp;</td>
+<td style="height: 17px;"><input id="rateDAP" type="number" min="0" value="1190" style="width: 7em"/>&nbsp;</td>
+<td style="height: 17px;"><input id="amountDAP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 17px;">MOP</td>
+<td style="height: 17px;"><input id="numMOP" type="number"  min="0" value="0"style="width: 7em" />&nbsp;</td>
+<td style="height: 17px;"><input id="rateMOP" type="number" min="0" value="900" style="width: 7em"/>&nbsp;</td>
+<td style="height: 17px;"><input id="amountMOP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 17px;">SUPER</td>
+<td style="height: 17px;"><input id="numSUPER" type="number"  min="0" value="0" style="width: 7em"/>&nbsp;</td>
+<td style="height: 17px;"><input id="rateSUPER" type="number" min="0" value="340" style="width: 7em"/>&nbsp;</td>
+<td style="height: 17px;"><input id="amountSUPER" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 17px;">ZINC</td>
+<td style="height: 17px;"><input id="numZINC" type="number"  min="0" value="0"style="width: 7em" />&nbsp;</td>
+<td style="height: 17px;"><input id="rateZINC" type="number" min="0" value="420" style="width: 7em"/>&nbsp;</td>
+<td style="height: 17px;"><input id="amountZINC" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 17px;">SULPHAR</td>
+<td style="height: 17px;"><input id="numSULPHAR" type="number" min="0" value="0" style="width: 7em"/>&nbsp;</td>
+<td style="height: 17px;"><input id="rateSULPHAR" type="number" min="0" value="340" style="width: 7em"/>&nbsp;</td>
+<td style="height: 17px;"><input id="amountSULPHAR" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p></P>
+<input type="button" id="btn" onClick="multiplyBy()" Value="Calculate" />
+<hr>
+<p>Total Taxable Amount :
+<span id = "amount"></span>
+</p>
+<hr>
+<p>CGST 2.5% :
+<span id = "cgst1"></span>
+</p>
+<p>SGST 2.5%:
+<span id = "sgst1"></span>
+</p>
+<p>CGST 6% :
+<span id = "cgst2"></span>
+</p>
+<p>SGST 6%:
+<span id = "sgst2"></span>
+</p>
+<hr>
+<p>Total CGST:
+<span id = "totalCGST"></span>
+</p>
+<p>Total SGST:
+<span id = "totalSGST"></span>
+</p>
+<hr>
+<p>Net Amount:
+<span id = "net"></span>
+</p>
+<script>
+var input = document.getElementById("number");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("btn").click();
+  }
+});
+</script>
+</body>
+</html>
