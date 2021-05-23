@@ -67,47 +67,47 @@ body {margin: 15px;}
 </style> 
 </head>
 <body style="background-color:powderblue;">
-<p style="text-align:center;">K.L.K.C </p>
+<p style="text-align:center;">K.L.K.C</p>
 <hr>
 </hr>
 <table style="border-collapse: collapse; width: 25%;" border="2">
 <tbody>
 <tr style="height: 25px;">
-<td style="height: 17px;">UREA</td>
-<td style="height: 17px;"><input id="numUREA" type="number"  min="0" value="0" autofocus="" style="width: 7em"/>&nbsp;</td>
-<td style="height: 17px;"><input id="rateUREA" type="number" min="0" value="250" style="width: 7em"/>&nbsp;</td>
-<td style="height: 17px;"><input id="amountUREA" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+<td>UREA</td>
+<td><input id="numUREA" type="number"  min="0" value="0" autofocus="" style="width: 7em"/>&nbsp;</td>
+<td><input id="rateUREA" type="number" min="0" value="250" style="width: 7em"/>&nbsp;</td>
+<td><input id="amountUREA" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
 </tr>
 
 <tr style="height: 25px;">
-<td style="height: 17px;">DAP</td>
-<td style="height: 17px;"><input id="numDAP" type="number"  min="0" value="0" style="width: 7em" />&nbsp;</td>
-<td style="height: 17px;"><input id="rateDAP" type="number" min="0" value="1190" style="width: 7em"/>&nbsp;</td>
-<td style="height: 17px;"><input id="amountDAP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+<td>DAP</td>
+<td><input id="numDAP" type="number"  min="0" value="0" style="width: 7em" />&nbsp;</td>
+<td><input id="rateDAP" type="number" min="0" value="1190" style="width: 7em"/>&nbsp;</td>
+<td><input id="amountDAP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
 </tr>
 <tr style="height: 25px;">
-<td style="height: 17px;">MOP</td>
-<td style="height: 17px;"><input id="numMOP" type="number"  min="0" value="0"style="width: 7em" />&nbsp;</td>
-<td style="height: 17px;"><input id="rateMOP" type="number" min="0" value="900" style="width: 7em"/>&nbsp;</td>
-<td style="height: 17px;"><input id="amountMOP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+<td>MOP</td>
+<td><input id="numMOP" type="number"  min="0" value="0"style="width: 7em" />&nbsp;</td>
+<td><input id="rateMOP" type="number" min="0" value="900" style="width: 7em"/>&nbsp;</td>
+<td><input id="amountMOP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
 </tr>
 <tr style="height: 25px;">
-<td style="height: 17px;">SUPER</td>
-<td style="height: 17px;"><input id="numSUPER" type="number"  min="0" value="0" style="width: 7em"/>&nbsp;</td>
-<td style="height: 17px;"><input id="rateSUPER" type="number" min="0" value="340" style="width: 7em"/>&nbsp;</td>
-<td style="height: 17px;"><input id="amountSUPER" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+<td>SUPER</td>
+<td><input id="numSUPER" type="number"  min="0" value="0" style="width: 7em"/>&nbsp;</td>
+<td><input id="rateSUPER" type="number" min="0" value="340" style="width: 7em"/>&nbsp;</td>
+<td><input id="amountSUPER" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
 </tr>
 <tr style="height: 25px;">
-<td style="height: 17px;">ZINC</td>
-<td style="height: 17px;"><input id="numZINC" type="number"  min="0" value="0"style="width: 7em" />&nbsp;</td>
-<td style="height: 17px;"><input id="rateZINC" type="number" min="0" value="420" style="width: 7em"/>&nbsp;</td>
-<td style="height: 17px;"><input id="amountZINC" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+<td>ZINC</td>
+<td><input id="numZINC" type="number"  min="0" value="0"style="width: 7em" />&nbsp;</td>
+<td><input id="rateZINC" type="number" min="0" value="420" style="width: 7em"/>&nbsp;</td>
+<td><input id="amountZINC" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
 </tr>
 <tr style="height: 25px;">
-<td style="height: 17px;">SULPHAR</td>
-<td style="height: 17px;"><input id="numSULPHAR" type="number" min="0" value="0" style="width: 7em"/>&nbsp;</td>
-<td style="height: 17px;"><input id="rateSULPHAR" type="number" min="0" value="340" style="width: 7em"/>&nbsp;</td>
-<td style="height: 17px;"><input id="amountSULPHAR" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+<td>SULPHAR</td>
+<td><input id="numSULPHAR" type="number" min="0" value="0" style="width: 7em"/>&nbsp;</td>
+<td><input id="rateSULPHAR" type="number" min="0" value="340" style="width: 7em"/>&nbsp;</td>
+<td><input id="amountSULPHAR" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -142,13 +142,28 @@ body {margin: 15px;}
 <span id = "net"></span>
 </p>
 <script>
-var input = document.getElementById("number");
-input.addEventListener("keyup", function(event) {
+var test=[];
+test.push(document.getElementById("numUREA"));
+test.push(document.getElementById("numDAP"));
+test.push(document.getElementById("numMOP"));
+test.push(document.getElementById("numSUPER"));
+test.push(document.getElementById("numZINC"));
+test.push(document.getElementById("numSULPHAR"));
+test.push(document.getElementById("rateUREA"));
+test.push(document.getElementById("rateDAP"));
+test.push(document.getElementById("rateMOP"));
+test.push(document.getElementById("rateSUPER"));
+test.push(document.getElementById("rateZINC"));
+test.push(document.getElementById("rateSULPHAR"));
+for (i = 0; i < 13; i++) {
+    test[i].addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
    document.getElementById("btn").click();
   }
 });
+		}
+
 </script>
 </body>
 </html>
