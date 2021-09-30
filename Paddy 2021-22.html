@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+function multiplyBy()
+{
+        bags = document.getElementById("number").value;
+		//var weight =0.375; for paddy
+		//var weight=bags/2; wheat
+		var weight=bags*0.375;
+        var msp=weight*1928;
+        var commision=round(msp*0.025);
+        var labour=bags*9.24;
+		var netAmount=round(msp+commision+labour);
+        document.getElementById("weight").innerHTML = weight;
+		document.getElementById("msp").innerHTML = msp;
+        document.getElementById("commision").innerHTML = commision;
+		document.getElementById("palledari").innerHTML = round(bags*6.10);
+        document.getElementById("filling").innerHTML = round(bags*1.43);
+        document.getElementById("loading").innerHTML = round(bags*1.71);
+		document.getElementById("totalExp").innerHTML = round(commision+labour);
+		document.getElementById("netAmount").innerHTML =netAmount ;
+		document.getElementById("labourI").innerHTML = round(labour);
+	    document.getElementById("labourJ").innerHTML = round(bags*6.06);
+        document.getElementById("amount").innerHTML = amount;
+
+
+}
+function round(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+</script>
+<meta charset=utf-8 />
+<title>I-form  Paddy 2021-22</title>
+<style type="text/css">
+body {margin: 30px;}
+</style> 
+</head>
+<body style="background-color:powderblue;">
+<p style="text-align:center;">K.L.K.C </p>
+<p style="text-align:center;">I-form Paddy 2021-22 </p>
+<hr>
+</hr>
+Number of bags : <input type="number" id="number" autofocus/><br>
+<p></P>
+<input type="button" id="btn" onClick="multiplyBy()" Value="Calculate" />
+<hr>
+<p>Weight Qtl :
+<span id = "weight"></span>
+</p>
+<p>MSP by 1928/- :
+<span id = "msp"></span>
+</p>
+<hr>
+<p>Commision 2.5% :
+<span id = "commision"></span>
+</p>
+<p>Palledari 6.10/- :
+<span id = "palledari"></span>
+</p>
+<p>Filling&Sweing 1.43/- :
+<span id = "filling"></span>
+</p>
+<p>Loading 1.71/- :
+<span id = "loading"></span>
+</p>
+<p>Total Charges :
+<span id = "totalExp"></span>
+</p>
+<hr>
+<p>Net Amount :
+<span id = "netAmount"></span>
+</p>
+<hr>
+<p>Labour By 9.24/-(Agency):
+<span id = "labourI"></span>
+</p>
+<p>Labour By 6.06/-(Farmer) :
+<span id = "labourJ"></span>
+</p>
+
+<script>
+var input = document.getElementById("number");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("btn").click();
+  }
+});
+</script>
+</body>
+</html>
