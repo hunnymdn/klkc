@@ -10,20 +10,20 @@ function multiplyBy()
 		//var weight =0.375; for paddy
 		//var weight=bags/2; wheat
 		var weight=bags*0.375;
-        var msp=weight*1928;
+        var msp=weight*1960;
         var commision=round(msp*0.025);
-        var labour=bags*9.24;
+        var labour=bags*9.51;
 		var netAmount=round(msp+commision+labour);
         document.getElementById("weight").innerHTML = weight;
 		document.getElementById("msp").innerHTML = msp;
         document.getElementById("commision").innerHTML = commision;
-		document.getElementById("palledari").innerHTML = round(bags*6.10);
-        document.getElementById("filling").innerHTML = round(bags*1.43);
-        document.getElementById("loading").innerHTML = round(bags*1.71);
+		document.getElementById("palledari").innerHTML = round(bags*6.57);
+        document.getElementById("filling").innerHTML = round(bags*1.09);
+        document.getElementById("loading").innerHTML = round(bags*1.85);
 		document.getElementById("totalExp").innerHTML = round(commision+labour);
 		document.getElementById("netAmount").innerHTML =netAmount ;
 		document.getElementById("labourI").innerHTML = round(labour);
-	    document.getElementById("labourJ").innerHTML = round(bags*6.06);
+	    document.getElementById("labourJ").innerHTML = round(bags*6.58);
         document.getElementById("amount").innerHTML = amount;
 
 
@@ -50,20 +50,20 @@ Number of bags : <input type="number" id="number" autofocus/><br>
 <p>Weight Qtl :
 <span id = "weight"></span>
 </p>
-<p>MSP by 1928/- :
+<p>MSP by 1960/- :
 <span id = "msp"></span>
 </p>
 <hr>
 <p>Commision 2.5% :
 <span id = "commision"></span>
 </p>
-<p>Palledari 6.10/- :
+<p>Palledari 6.57/- :
 <span id = "palledari"></span>
 </p>
-<p>Filling&Sweing 1.43/- :
+<p>Filling&Sweing 1.09/- :
 <span id = "filling"></span>
 </p>
-<p>Loading 1.71/- :
+<p>Loading 1.85/- :
 <span id = "loading"></span>
 </p>
 <p>Total Charges :
@@ -74,10 +74,10 @@ Number of bags : <input type="number" id="number" autofocus/><br>
 <span id = "netAmount"></span>
 </p>
 <hr>
-<p>Labour By 9.24/-(Agency):
+<p>Labour By 9.51/-(Agency):
 <span id = "labourI"></span>
 </p>
-<p>Labour By 6.06/-(Farmer) :
+<p>Labour By 6.58/-(Farmer) :
 <span id = "labourJ"></span>
 </p>
 
