@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.5">
+<meta name="viewport" content="width=device-width, initial-scale= 1.5">
 
 <script>
 function multiplyBy()
@@ -12,18 +12,18 @@ function multiplyBy()
 		var weight=bags*0.375;
         var msp=weight*1960;
         var commision=round(msp*0.025);
-        var labour=bags*9.52;
+        var labour=bags*9.51;
 		var netAmount=round(msp+commision+labour);
         document.getElementById("weight").innerHTML = weight;
 		document.getElementById("msp").innerHTML = msp;
         document.getElementById("commision").innerHTML = commision;
-		document.getElementById("palledari").innerHTML = round(bags*6.58);
+		document.getElementById("palledari").innerHTML = round(bags*6.57);
         document.getElementById("filling").innerHTML = round(bags*1.09);
         document.getElementById("loading").innerHTML = round(bags*1.85);
 		document.getElementById("totalExp").innerHTML = round(commision+labour);
 		document.getElementById("netAmount").innerHTML =netAmount ;
 		document.getElementById("labourI").innerHTML = round(labour);
-	    document.getElementById("labourJ").innerHTML = round(bags*6.57);
+	    document.getElementById("labourJ").innerHTML = round(bags*6.58);
         document.getElementById("amount").innerHTML = amount;
 
 
@@ -35,50 +35,50 @@ function round(num) {
 <meta charset=utf-8 />
 <title>I-form  Paddy 2021-22</title>
 <style type="text/css">
-body {margin: 30px;}
+body {margin: 30px;  font-size: 18px;}
+input{font-size:23px;}
 </style> 
 </head>
 <body style="background-color:powderblue;">
-<p style="text-align:center;">K.L.K.C </p>
-<p style="text-align:center;">I-form Paddy 2021-22 </p>
+<p style="text-align:center;">KLKC Paddy 2021-22 </p>
 <hr>
 </hr>
-Number of bags : <input type="number" id="number" autofocus/><br>
+Number of bags :   <input type="number" id="number" autofocus/><br>
 <p></P>
 <input type="button" id="btn" onClick="multiplyBy()" Value="Calculate" />
 <hr>
-<p>Weight Qtl :
-<span id = "weight"></span>
+<p>Weight Qtl :  
+<span id = "weight" style="color:red"></span>
 </p>
-<p>MSP by 1960/- :
-<span id = "msp"></span>
-</p>
-<hr>
-<p>Commision 2.5% :
-<span id = "commision"></span>
-</p>
-<p>Palledari 6.58/- :
-<span id = "palledari"></span>
-</p>
-<p>Filling&Sweing 1.09/- :
-<span id = "filling"></span>
-</p>
-<p>Loading 1.85/- :
-<span id = "loading"></span>
-</p>
-<p>Total Charges :
-<span id = "totalExp"></span>
+<p>MSP by 1960/- :  
+<span id = "msp" style="color:red"></span>
 </p>
 <hr>
-<p>Net Amount :
-<span id = "netAmount"></span>
+<p>Commision 2.5% :  
+<span id = "commision" style="color:red"></span>
+</p>
+<p>Palledari 6.57/- :  
+<span id = "palledari" style="color:red"></span>
+</p>
+<p>Filling&Sweing 1.09/- :  
+<span id = "filling" style="color:red"></span>
+</p>
+<p>Loading 1.85/- :  
+<span id = "loading" style="color:red"></span>
+</p>
+<p>Total Charges :  
+<span id = "totalExp" style="color:red"></span>
 </p>
 <hr>
-<p>Labour By 9.52/-(Agency):
-<span id = "labourI"></span>
+<p>Net Amount :  
+<span id = "netAmount" style="color:red"></span>
 </p>
-<p>Labour By 6.57/-(Farmer) :
-<span id = "labourJ"></span>
+<hr>
+<p>Labour By 9.51/-(Agency):  
+<span id = "labourI" style="color:red"></span>
+</p>
+<p>Labour By 6.58/-(Farmer) :  
+<span id = "labourJ" style="color:red"></span>
 </p>
 
 <script>
@@ -92,3 +92,4 @@ input.addEventListener("keyup", function(event) {
 </script>
 </body>
 </html>
+
