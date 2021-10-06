@@ -12,18 +12,18 @@ function multiplyBy()
 		var weight=bags*0.375;
         var msp=weight*1960;
         var commision=round(msp*0.025);
-        var labour=bags*9.51;
+        var labour=bags*9.52;
 		var netAmount=round(msp+commision+labour);
         document.getElementById("weight").innerHTML = weight;
 		document.getElementById("msp").innerHTML = msp;
         document.getElementById("commision").innerHTML = commision;
-		document.getElementById("palledari").innerHTML = round(bags*6.57);
+		document.getElementById("palledari").innerHTML = round(bags*6.58);
         document.getElementById("filling").innerHTML = round(bags*1.09);
         document.getElementById("loading").innerHTML = round(bags*1.85);
 		document.getElementById("totalExp").innerHTML = round(commision+labour);
 		document.getElementById("netAmount").innerHTML =netAmount ;
 		document.getElementById("labourI").innerHTML = round(labour);
-	    document.getElementById("labourJ").innerHTML = round(bags*6.58);
+	    document.getElementById("labourJ").innerHTML = round(bags*6.57);
         document.getElementById("amount").innerHTML = amount;
 
 
@@ -57,7 +57,7 @@ Number of bags :   <input type="number" id="number" autofocus/><br>
 <p>Commision 2.5% :  
 <span id = "commision" style="color:red"></span>
 </p>
-<p>Palledari 6.57/- :  
+<p>Palledari 6.58/- :  
 <span id = "palledari" style="color:red"></span>
 </p>
 <p>Filling&Sweing 1.09/- :  
@@ -74,10 +74,10 @@ Number of bags :   <input type="number" id="number" autofocus/><br>
 <span id = "netAmount" style="color:red"></span>
 </p>
 <hr>
-<p>Labour By 9.51/-(Agency):  
+<p>Labour By 9.52/-(Agency):  
 <span id = "labourI" style="color:red"></span>
 </p>
-<p>Labour By 6.58/-(Farmer) :  
+<p>Labour By 6.57/-(Farmer) :  
 <span id = "labourJ" style="color:red"></span>
 </p>
 
