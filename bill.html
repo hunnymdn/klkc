@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
@@ -15,7 +15,7 @@ function multiplyBy()
 		var totalTAX;
 		var netAmount;
 		//var rateNumber = [];
-        bagNumber.push(document.getElementById("numUREA").value);
+    bagNumber.push(document.getElementById("numUREA").value);
 		rateNumber.push(document.getElementById("rateUREA").value);
 		bagNumber.push(document.getElementById("numDAP").value);
 		rateNumber.push(document.getElementById("rateDAP").value);
@@ -52,19 +52,45 @@ function multiplyBy()
 		netAmount = round(net+ totalTAX+totalTAX);
 		document.getElementById("net").innerHTML= netAmount;
 
-		
+
 
 
 }
-function round(num) {    
+function round(num) {
     return +(Math.round(num + "e+2")  + "e-2");
 }
+function Clear()
+{
+
+		document.getElementById("numUREA").value=0;
+		document.getElementById("amountUREA").value=0;
+		document.getElementById("numDAP").value=0;
+		document.getElementById("amountDAP").value=0;
+		document.getElementById("numMOP").value=0;
+		document.getElementById("amountMOP").value=0;
+		document.getElementById("numSUPER").value=0;
+		document.getElementById("amountSUPER").value=0;
+		document.getElementById("numZINC").value=0;
+		document.getElementById("amountZINC").value=0;
+		document.getElementById("numSULPHAR").value=0;
+		document.getElementById("amountSULPHAR").value=0;
+		document.getElementById("amount").innerHTML='';
+		document.getElementById("cgst1").innerHTML='';
+		document.getElementById("sgst1").innerHTML='';
+		document.getElementById("cgst2").innerHTML='';
+		document.getElementById("sgst2").innerHTML='';
+		document.getElementById("totalCGST").innerHTML='';
+		document.getElementById("totalSGST").innerHTML='';
+		document.getElementById("net").innerHTML='';
+
+}
+
 </script>
 <meta charset=utf-8 />
 <title>SALE BILL</title>
 <style type="text/css">
 body {margin: 15px;}
-</style> 
+</style>
 </head>
 <body style="background-color:powderblue;">
 <p style="text-align:center;">K.L.K.C</p>
@@ -80,39 +106,47 @@ body {margin: 15px;}
 </tr>
 
 <tr style="height: 25px;">
-<td>DAP</td>
-<td><input id="numDAP" type="number"  min="0" value="0" style="width: 7em" />&nbsp;</td>
-<td><input id="rateDAP" type="number" min="0" value="1285" style="width: 7em"/>&nbsp;</td>
-<td><input id="amountDAP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+<td>SULPHAR</td>
+<td><input id="numSULPHAR" type="number" min="0" value="0" style="width: 7em"/>&nbsp;</td>
+<td><input id="rateSULPHAR" type="number" min="0" value="550" style="width: 7em"/>&nbsp;</td>
+<td><input id="amountSULPHAR" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
 </tr>
-<tr style="height: 25px;">
-<td>MOP</td>
-<td><input id="numMOP" type="number"  min="0" value="0"style="width: 7em" />&nbsp;</td>
-<td><input id="rateMOP" type="number" min="0" value="960" style="width: 7em"/>&nbsp;</td>
-<td><input id="amountMOP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
-</tr>
+
 <tr style="height: 25px;">
 <td>SUPER</td>
 <td><input id="numSUPER" type="number"  min="0" value="0" style="width: 7em"/>&nbsp;</td>
 <td><input id="rateSUPER" type="number" min="0" value="340" style="width: 7em"/>&nbsp;</td>
 <td><input id="amountSUPER" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
 </tr>
+
+<tr style="height: 25px;">
+<td>MOP</td>
+<td><input id="numMOP" type="number"  min="0" value="0"style="width: 7em" />&nbsp;</td>
+<td><input id="rateMOP" type="number" min="0" value="960" style="width: 7em"/>&nbsp;</td>
+<td><input id="amountMOP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+</tr>
+
+
+<tr style="height: 25px;">
+<td>DAP</td>
+<td><input id="numDAP" type="number"  min="0" value="0" style="width: 7em" />&nbsp;</td>
+<td><input id="rateDAP" type="number" min="0" value="1285" style="width: 7em"/>&nbsp;</td>
+<td><input id="amountDAP" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
+</tr>
+
 <tr style="height: 25px;">
 <td>ZINC</td>
 <td><input id="numZINC" type="number"  min="0" value="0"style="width: 7em" />&nbsp;</td>
 <td><input id="rateZINC" type="number" min="0" value="450" style="width: 7em"/>&nbsp;</td>
 <td><input id="amountZINC" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
 </tr>
-<tr style="height: 25px;">
-<td>SULPHAR</td>
-<td><input id="numSULPHAR" type="number" min="0" value="0" style="width: 7em"/>&nbsp;</td>
-<td><input id="rateSULPHAR" type="number" min="0" value="550" style="width: 7em"/>&nbsp;</td>
-<td><input id="amountSULPHAR" type="number" min="0" style="width: 7em" readonly/>&nbsp;</td>
-</tr>
+
 </tbody>
 </table>
 <p></P>
 <input type="button" id="btn" onClick="multiplyBy()" Value="Calculate" />
+<input type="button" id="btn" onClick="Clear()" Value="Clear" />
+
 <hr>
 <p>Total Taxable Amount :
 <span id = "amount"></span>
