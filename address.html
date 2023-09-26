@@ -1,6 +1,7 @@
+<html>
 <main>
   <div class="wrapper">
-    <form>
+    <form name="myform">
       <div>
         <label for="name">Name</label>
         <input required type="text" id="name" name="name" autocomplete="name" enterkeyhint="next">
@@ -33,7 +34,13 @@
             <option value="US">United States</option>
         </select> 
       </div>
-      <button>Save address</button>
+     <input type="button" value="Send" onclick="myFunction();" />
     </form>
   </div>
 </main>
+  <script>
+function myFunction() {
+ document.getElementById("myform").reset();
+}
+</script>
+</html>
