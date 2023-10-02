@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html> 
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale= 1.5">
+
+
+
+<script>
+
+function multiplyBy()
+
+{
+
+        bags = document.getElementById("number").value;
+
+		//var weight =0.375; for paddy
+
+		//var weight=bags/2; wheat
+
+		var weight=bags*0.375;
+
+        var msp=weight*2203;
+
+        var commision=round(msp*0.025);
+
+        var labour=bags*9.82;
+
+		var netAmount=round(msp+commision+labour);
+
+        document.getElementById("weight").innerHTML = weight;
+
+		document.getElementById("msp").innerHTML = msp;
+
+        document.getElementById("commision").innerHTML = commision;
+
+		document.getElementById("palledari").innerHTML = round(bags*6.78);
+
+        document.getElementById("filling").innerHTML = round(bags*1.13);
+
+        document.getElementById("loading").innerHTML = round(bags*1.91);
+
+		document.getElementById("totalExp").innerHTML = round(commision+labour);
+
+		document.getElementById("netAmount").innerHTML =netAmount ;
+
+		document.getElementById("labourI").innerHTML = round(labour);
+
+	    document.getElementById("labourJ").innerHTML = round(bags*6.79);
+
+        document.getElementById("amount").innerHTML = amount;
+
+
+
+
+
+}
+
+function round(num) {    
+
+    return +(Math.round(num + "e+2")  + "e-2");
+
+}
+
+</script>
+
+<meta charset=utf-8 />
+
+<title>I-form  Paddy 2023-24</title>
+
+<style type="text/css">
+
+body {margin: 30px;  font-size: 18px;}
+
+input{font-size:23px;}
+
+</style> 
+
+</head>
+
+<body style="background-color:powderblue;">
+
+<p style="text-align:center;">KLKC Paddy 2023-24 </p>
+
+<hr>
+
+</hr>
+
+Number of bags :   <input type="number" id="number" autofocus/><br>
+
+<p></P>
+
+<input type="button" id="btn" onClick="multiplyBy()" Value="Calculate" />
+
+<hr>
+
+<p>Weight Qtl :  
+
+<span id = "weight" style="color:red"></span>
+
+</p>
+
+<p>MSP by 2203/- :  
+
+<span id = "msp" style="color:red"></span>
+
+</p>
+
+<hr>
+
+<p>Commision 2.5% :  
+
+<span id = "commision" style="color:red"></span>
+
+</p>
+
+<p>Palledari 6.78/- :  
+
+<span id = "palledari" style="color:red"></span>
+
+</p>
+
+<p>Filling&Sweing 1.13/- :  
+
+<span id = "filling" style="color:red"></span>
+
+</p>
+
+<p>Loading 1.91/- :  
+
+<span id = "loading" style="color:red"></span>
+
+</p>
+
+<p>Total Charges :  
+
+<span id = "totalExp" style="color:red"></span>
+
+</p>
+
+<hr>
+
+<p>Net Amount :  
+
+<span id = "netAmount" style="color:red"></span>
+
+</p>
+
+<hr>
+
+<p>Labour By 9.82/-(Agency):  
+
+<span id = "labourI" style="color:red"></span>
+
+</p>
+
+<p>Labour By 6.79/-(Farmer) :  
+
+<span id = "labourJ" style="color:red"></span>
+
+</p>
+
+
+
+<script>
+
+var input = document.getElementById("number");
+
+input.addEventListener("keyup", function(event) {
+
+  if (event.keyCode === 13) {
+
+   event.preventDefault();
+
+   document.getElementById("btn").click();
+
+  }
+
+});
+
+</script>
+
+</body>
+
+</html>
