@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="module">
+const crop="WHEAT 2025-26";
+const newMsp=2425;
+const newFandW=6.53;
+const newloading=2.64;
+const newstitching=1.54;
+const newIlabour=10.71;
+const newJlaobour=6.45;
+const percentamt=0.02;
+const percentcom=45.08;
+globalThis.newMsp=newMsp;
+globalThis.newFandW=newFandW;
+globalThis.newloading=newloading;
+globalThis.newstitching=newstitching;
+globalThis.newIlabour=newIlabour;
+globalThis.newJlaobour=newJlaobour;
+globalThis.percentamt=percentamt;
+globalThis.percentcom=percentcom;
+document.getElementById("crop").innerHTML = crop;
+document.getElementById("newMsp").innerHTML = newMsp;
+document.getElementById("F&Wamt").innerHTML = newFandW;
+document.getElementById("loadingamt").innerHTML = newloading;
+document.getElementById("Stitchamt").innerHTML = newstitching;
+document.getElementById("labourIamt").innerHTML = newIlabour;
+document.getElementById("labourJamt").innerHTML = newJlaobour;
+document.getElementById("commision2rate").innerHTML = percentcom;
+</script>
+
+<script>
+function multiplyBy()
+{
+bags = document.getElementById("number").value;
+
+var weight=bags/2;
+var msp=weight*newMsp;
+var commision=round(msp*0.025);
+var commision2=round(weight*percentcom);
+var FandW = round(bags*newFandW);
+var FandWnet=round(FandW*(1-percentamt));
+var loading = round(bags*newloading);
+var loadingNet=round(loading*(1-percentamt));
+var stitching = round(bags*newstitching);;
+var stitchingNet=round(stitching*(1-percentamt));
+var labour=bags*newIlabour;
+var netAmount=round(msp+commision+labour);
+
+document.getElementById("weight").innerHTML = weight;
+document.getElementById("msp").innerHTML = msp;
+document.getElementById("commision").innerHTML = commision;
+document.getElementById("commision2").innerHTML = commision2;
+document.getElementById("F&W").innerHTML = FandW;
+document.getElementById("F&W2").innerHTML = FandWnet;
+document.getElementById("loading").innerHTML = loading;
+document.getElementById("loading2").innerHTML = loadingNet;
+document.getElementById("Stitching").innerHTML = stitching;
+document.getElementById("Stitching2").innerHTML = stitchingNet;
+document.getElementById("totalExp").innerHTML = round(commision+labour);
+document.getElementById("netAmount").innerHTML =netAmount ;
+document.getElementById("labourI").innerHTML = round(labour);
+document.getElementById("labourJ").innerHTML = round(bags*newJlaobour);
+
+}
+
+function round(num) {
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+</script>
+
+<meta charset=utf-8 />
+<title>I-form</title>
+
+<style type="text/css">
+body {margin: 10px;}
+</style>
+
+</head>
+
+<body style="background-color:powderblue;">
+
+<p style="text-align:center;">KLKC <span id="crop"></span></p>
+
+<hr>
+Bags : <input type="number" style="width:80px" id="number" autofocus/>
+<input type="button" id="btn" onClick="multiplyBy()" Value="Calculate"/>
+<br>
+
+<hr>
+<p>Weight Qtl : <span id = "weight" style="color: darkred;"></span></p>
+<p>MSP by <span id="newMsp"></span>/- <span id = "msp" style="color: darkred;"></span></p>
+
+
+<hr>
+<p>Commision 2.5% : <span id = "commision" style="color: darkred;"></span></p>
+<p>Net by <span id = "commision2rate"></span>/- : <span id = "commision2"></span></p>
+
+<hr>
+<p>Filling&Weighing <span id = "F&Wamt"></span>/- : <span id="F&W" style="color: darkred;"></span></p>
+<p>Net : <span id = "F&W2"></span></p>
+
+<hr>
+<p>Loading <span id = "loadingamt"></span>/- : <span id = "loading" style="color: darkred;"></span></p>
+<p>Net : <span id = "loading2"></span></p>
+
+<hr>
+<p>Stitching <span id = "Stitchamt"></span>/- : <span id = "Stitching" style="color: darkred;"></span></p>
+<p>Net : <span id = "Stitching2"></span></p>
+
+<hr>
+<p>Total Charges : <span id = "totalExp" style="color: darkred;"></span></p>
+
+
+<hr>
+<p>Net Amount :<span id = "netAmount" style="color: darkred;"></span></p>
+
+<hr>
+<p>Labour By <span id = "labourIamt"></span>/-(Agency): <span id = "labourI" style="color: darkred;"></span></p>
+<p>Labour By <span id = "labourJamt"></span>/-(Farmer): <span id = "labourJ" style="color: darkred;"></span></p>
+
+<script>
+
+var input = document.getElementById("number");
+
+input.addEventListener("keyup", function(event) {
+
+  if (event.keyCode === 13) {
+
+   event.preventDefault();
+
+   document.getElementById("btn").click();
+
+  }
+
+});
+
+</script>
+
+</body>
+
+</html>
